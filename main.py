@@ -21,7 +21,7 @@ app = Flask(__name__)
 google_api_key = os.getenv('GOOGLE_API_KEY')
 twilio_account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 twilio_auth_token = os.getenv('TWILIO_AUTH_TOKEN')
-validator = RequestValidator(twilio_auth_token)
+#validator = RequestValidator(twilio_auth_token)
 
 # Configuración del prompt
 prompt_template = """ En el plan de gobierno peronista
