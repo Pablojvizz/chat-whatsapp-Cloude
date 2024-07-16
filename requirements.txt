@@ -23,8 +23,6 @@ Deprecated==1.2.14
 dnspython==2.6.1
 email_validator==2.2.0
 exceptiongroup==1.2.2
-fastapi==0.111.1
-fastapi-cli==0.0.4
 filelock==3.15.4
 Flask==3.0.3
 flatbuffers==24.3.25
