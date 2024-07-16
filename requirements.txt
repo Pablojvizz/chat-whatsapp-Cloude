@@ -14,7 +14,7 @@ cachetools==5.4.0
 certifi==2024.7.4
 charset-normalizer==3.3.2
 chroma-hnswlib==0.7.5
-chromadb==0.5.4
+chromadb==0.3.29
 click==8.1.7
 colorama==0.4.6
 coloredlogs==15.0.1
@@ -131,4 +131,3 @@ Werkzeug==3.0.3
 wrapt==1.16.0
 yarl==1.9.4
 zipp==3.19.2
-pysqlite3-binary
