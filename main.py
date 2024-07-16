@@ -46,11 +46,11 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=1.0, google_api_key
 # Configuración de la cadena QA
 qa_chain = load_qa_chain(llm=llm, chain_type="stuff", verbose=True, prompt=prompt)
 
-def validate_twilio_request():
-    url = request.url
-    params = request.form
-    signature = request.headers.get('X-Twilio-Signature', '')
-    return validator.validate(url, params, signature)
+#def validate_twilio_request():
+#    url = request.url
+#    params = request.form
+#    signature = request.headers.get('X-Twilio-Signature', '')
+#    return validator.validate(url, params, signature)
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
