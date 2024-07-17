@@ -1,7 +1,0 @@
-buildCommand:
-  - wget https://www.sqlite.org/2021/sqlite-autoconf-3350500.tar.gz
-  - tar xvfz sqlite-autoconf-3350500.tar.gz
-  - cd sqlite-autoconf-3350500
-  - ./configure
-  - make
-  - sudo make install
