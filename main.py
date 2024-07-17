@@ -10,7 +10,9 @@ from langchain.chains import RetrievalQA
 from twilio.request_validator import RequestValidator
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
-
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 # Cargar variables de entorno
 load_dotenv()
 
@@ -46,11 +48,11 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=1.0, google_api_key
 # Configuración de la cadena QA
 qa_chain = load_qa_chain(llm=llm, chain_type="stuff", verbose=True, prompt=prompt)
 
-#def validate_twilio_request():
-#    url = request.url
-#    params = request.form
-#    signature = request.headers.get('X-Twilio-Signature', '')
-#    return validator.validate(url, params, signature)
+def validate_twilio_request():
+    url = request.url
+    params = request.form
+    signature = request.headers.get('X-Twilio-Signature', '')
+    return validator.validate(url, params, signature)
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
@@ -90,6 +92,5 @@ def webhook():
         return str(error_response)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True)
 
